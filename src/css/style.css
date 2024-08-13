@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply relative z-1 bg-whiten font-satoshi text-base font-normal text-body;
+  }
+}
+/* For dark mode */
+input.dark\:bg-form-input::placeholder {
+  color: white !important; /* Change the color of the placeholder text in dark mode */
+}
+
+@layer components {
+}
+:root {
+  --bg-btn: rgb(251 84 84);
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .chat-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+
+  .inbox-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
+}
+
+/* third-party libraries CSS */
+
+.tableCheckbox:checked ~ div span {
+  @apply opacity-100;
+}
+
+.tableCheckbox:checked ~ div {
+  @apply border-primary bg-primary;
+}
+
+.apexcharts-legend-text {
+  @apply !text-body dark:!text-bodydark;
+}
+
+.apexcharts-text {
+  @apply !fill-body dark:!fill-bodydark;
+}
+
+.apexcharts-xcrosshairs {
+  @apply !fill-stroke dark:!fill-strokedark;
+}
+
+.apexcharts-gridline {
+  @apply !stroke-stroke dark:!stroke-strokedark;
+}
+
+.apexcharts-series.apexcharts-pie-series path {
+  @apply dark:!stroke-transparent;
+}
+
+.apexcharts-legend-series {
+  @apply !inline-flex gap-1.5;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  @apply dark:!border-strokedark dark:!bg-boxdark;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  @apply dark:!border-strokedark dark:!bg-meta-4;
+}
+
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+  @apply dark:!border-meta-4 dark:!bg-meta-4 dark:!text-bodydark1;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  @apply !border-b-gray dark:!border-b-meta-4;
+}
+
+.apexcharts-xaxistooltip-bottom {
+  @apply !rounded !border-none !bg-gray !text-xs !font-medium !text-black dark:!text-white;
+}
+
+.apexcharts-tooltip-series-group {
+  @apply !pl-1.5;
+}
+
+.flatpickr-wrapper {
+  @apply w-full;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  @apply !fill-primary;
+}
+
+.flatpickr-calendar.arrowTop:before {
+  @apply dark:!border-b-boxdark;
+}
+
+.flatpickr-calendar.arrowTop:after {
+  @apply dark:!border-b-boxdark;
+}
+
+.flatpickr-calendar {
+  @apply !p-6 dark:!bg-boxdark dark:!text-bodydark dark:!shadow-8 2xsm:!w-auto;
+}
+
+.flatpickr-day {
+  @apply dark:!text-bodydark dark:hover:!border-meta-4 dark:hover:!bg-meta-4;
+}
+
+.flatpickr-months .flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month {
+  @apply !top-7 dark:!fill-white dark:!text-white;
+}
+
+.flatpickr-months .flatpickr-prev-month.flatpickr-prev-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-prev-month {
+  @apply !left-7;
+}
+
+.flatpickr-months .flatpickr-prev-month.flatpickr-next-month,
+.flatpickr-months .flatpickr-next-month.flatpickr-next-month {
+  @apply !right-7;
+}
+
+span.flatpickr-weekday,
+.flatpickr-months .flatpickr-month {
+  @apply dark:!fill-white dark:!text-white;
+}
+
+.flatpickr-day.inRange {
+  box-shadow:
+    -5px 0 0 #f3f4f6,
+    5px 0 0 #f3f4f6 !important;
+  @apply dark:!shadow-7;
+}
+
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+  @apply !border-[#F3F4F6] !bg-[#F3F4F6] dark:!border-meta-4 dark:!bg-meta-4;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.selected,
+.flatpickr-day.endRange {
+  @apply dark:!text-white;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  background: #3c50e0;
+  @apply !border-primary !bg-primary hover:!border-primary hover:!bg-primary;
+}
+
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  box-shadow: -10px 0 0 #3c50e0;
+}
+
+.map-btn .jvm-zoom-btn {
+  @apply flex h-7.5 w-7.5 items-center justify-center rounded border border-stroke bg-white px-0 pb-0.5 pt-0 text-2xl leading-none text-body hover:border-primary hover:bg-primary hover:text-white dark:border-strokedark dark:bg-meta-4 dark:text-bodydark dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white;
+}
+
+.mapOne .jvm-zoom-btn {
+  @apply !bottom-0 !left-auto !top-auto;
+}
+
+.mapOne .jvm-zoom-btn.jvm-zoomin {
+  @apply !right-10;
+}
+
+.mapOne .jvm-zoom-btn.jvm-zoomout {
+  @apply !right-0;
+}
+
+.taskCheckbox:checked ~ .box span {
+  @apply opacity-100;
+}
+
+.taskCheckbox:checked ~ p {
+  @apply line-through;
+}
+
+.taskCheckbox:checked ~ .box {
+  @apply border-primary bg-primary dark:border-primary;
+}
+
+.custom-input-date::-webkit-calendar-picker-indicator {
+  background: transparent;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  @apply appearance-none;
+}
+
+.custom-input-date::-webkit-calendar-picker-indicator {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+.custom-pagination .ant-pagination-item a {
+  @apply dark:!fill-white dark:!text-white;
+}
+.custom-pagination .anticon svg {
+  @apply dark:!fill-white dark:!text-white;
+}
+.custom-pagination .ant-pagination-item-ellipsis {
+  @apply dark:!fill-white dark:!text-white;
+}
+.custom-pagination .ant-pagination-item-active {
+  @apply dark:bg-meta-4 dark:text-bodydark;
+}
+.custom-input .ant-select-selector {
+  @apply dark:bg-meta-4 dark:!fill-white dark:!text-white;
+}
+.custom-input {
+  @apply mb-3 dark:bg-meta-4 dark:!fill-white dark:!text-white;
+}
+.custom-button .ant-btn-default:active {
+  @apply bg-bodydark1;
+}
+.color-custom {
+  border: none !important;
+  color: white !important;
+  background-color: var(--bg-btn) !important;
+}
+.color-custom:hover {
+  color: white !important;
+  background-color: var(--bg-btn) !important;
+  scale: 1.05 !important;
+  border: none !important;
+}
+
+.ant-checkbox-inner {
+  width: 30px !important;
+  height: 30px !important;
+}
+.ant-checkbox + span {
+  padding: 20px 20px;
+}
+.ant-checkbox .ant-checkbox-inner:after {
+  width: 10px !important;
+  height: 20px !important;
+  /* top: 40% !important; */
+  inset-inline-start: 25% !important;
+}
+.anticon svg {
+  @apply dark:!fill-white;
+}
+.ant-collapse
+  > .ant-collapse-item
+  > .ant-collapse-header
+  .ant-collapse-arrow
+  svg {
+  @apply dark:!fill-black;
+}
+.ant-collapse-header-text {
+  @apply dark:text-black;
+}
+.ant-collapse-header {
+  @apply bg-[#ccddec] dark:bg-white;
+}
+.handlecsspicker {
+  @apply dark:border-meta-4 dark:bg-meta-4 dark:!text-white;
+}
+.ant-picker-input input::placeholder {
+  @apply dark:bg-meta-4 dark:!text-white;
+}
+.handlecssplacholder textarea::placeholder {
+  @apply dark:!text-white;
+}
+.ant-checkbox-inner {
+  @apply dark:border-meta-4 dark:bg-meta-4 dark:!text-white;
+}
+.ant-input-number-outlined {
+  @apply dark:bg-meta-4 dark:!text-white;
+}
+.ant-input-number .ant-input-number-input,
+.ant-modal-content,
+.ant-modal-close,
+.ant-modal-header,
+.ant-modal-title {
+  @apply dark:bg-meta-4 dark:!text-white;
+}
+.ant-tabs-tab {
+  @apply dark:!text-white;
+}
+.handlewf {
+  width: 100% !important;
+}
+.ant-upload {
+  @apply dark:rounded-full dark:bg-meta-4 dark:!text-white;
+}
+.ant-modal-content {
+  width: 100% !important;
+}
+.ant-btn-primary {
+  @apply dark:bg-primary dark:!text-white;
+}
+.dark .handleaddred.ant-btn-primary {
+  background-color: red !important;
+}
+/* .ant-upload {
+  height: 0 !important;
+} */
+.ant-btn-primary {
+  @apply bg-primary dark:!text-white;
+}
+.ant-btn-default {
+  @apply dark:bg-meta-4 dark:!text-white;
+}
+.ant-btn-default:hover {
+  background-color: transparent !important;
+  scale: 1.05 !important;
+}
+.handlewraptext,
+.handlewraptextPosition,
+.handlewraptextRequired {
+  padding: 0.25em 0.4em;
+  display: inline-block;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  font-size: 75%;
+}
+
+.handlewraptext {
+  background-color: #63c2de;
+}
+.handlewraptextRequired {
+  background-color: #c8ced3;
+}
+.handlewraptextPosition {
+  background-color: #f86c6b;
+
+  color: white;
+}
+.handlebuttonedit {
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  color: white;
+}
+.handlebuttonedit:hover {
+  opacity: 1;
+  scale: 1.05;
+}
+.edit {
+  background-color: #63c2de;
+}
+.trash {
+  background-color: #f86c6b;
+}
+.ant-collapse-content-box {
+  background: white;
+}
+.ant-collapse-content-box {
+  @apply dark:bg-meta-4;
+}
+.ant-modal-footer {
+  display: none !important;
+}
+
+.ant-color-picker-trigger {
+  min-width: 200px !important;
+}
+.ant-ribbon-wrapper {
+  width: 100% !important;
+}
