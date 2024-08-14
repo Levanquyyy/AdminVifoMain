@@ -246,7 +246,7 @@ const FormLayout = () => {
                               className="w-1/12 bg-primary p-3 font-medium text-white hover:bg-opacity-90 "
                               disabled={!selectedValue}
                             >
-                              ADD NEW12
+                              ADD NEW
                             </Button>
                           </div>
 
