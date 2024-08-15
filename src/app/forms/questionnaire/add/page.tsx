@@ -23,7 +23,7 @@ const FormLayout = () => {
   ]);
   const [questionText, setQuestionText] = useState("");
   const [questionCode, setQuestionCode] = useState("");
-  const [position, setPosition] = useState(1);
+  const [position, setPosition] = useState("");
   const [provider, setProvider] = useState([]);
   const [rank, setRank] = useState([]);
   const [family, setFamily] = useState("");
@@ -81,16 +81,19 @@ const FormLayout = () => {
                 <div className="w-full">
                   <div className="p-3">
                     <div className="flex flex-col gap-5.5 p-3">
-                      <SelectGroupTwo
-                        id="Family"
-                        nhacungcap="Family"
-                        value={family}
-                        onChange={setFamily}
-                      >
-                        <option value="dongabank">DOng A Bank</option>
-                        <option value="mbbank">MB Bank</option>
-                        <option value="bamabank">Ba Ma Bank</option>
-                      </SelectGroupTwo>
+                      <label className="text-md  block font-medium capitalize text-black dark:text-white">
+                        Family
+                      </label>
+                      <Select
+                        defaultValue="lucy"
+                        className="w-full"
+                        options={[
+                          { value: "jack", label: "Jack" },
+                          { value: "lucy", label: "Lucy" },
+                          { value: "Yiminghe", label: "yiminghe" },
+                        ]}
+                        onChange={(value) => setFamily(value)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -107,7 +110,8 @@ const FormLayout = () => {
                         style={{ width: "100%" }}
                         options={options}
                         value={provider}
-                        onChange={setProvider}
+                        // onChange={setProvider}
+                        onChange={(value) => setProvider(value)}
                       />
                     </div>
                   </div>
@@ -125,7 +129,7 @@ const FormLayout = () => {
                         style={{ width: "100%" }}
                         options={options}
                         value={rank}
-                        onChange={setRank}
+                        onChange={(value) => setRank(value)}
                       />
                     </div>
                   </div>
@@ -170,16 +174,19 @@ const FormLayout = () => {
                 <div className="w-full">
                   <div className="p-3">
                     <div className="flex flex-col gap-5.5 p-3">
-                      <SelectGroupTwo
-                        id="Question Type"
-                        nhacungcap="Question Type"
-                        value={questionType}
-                        onChange={setQuestionType}
-                      >
-                        <option value="dongabank">DOng A Bank</option>
-                        <option value="mbbank">MB Bank</option>
-                        <option value="bamabank">Ba Ma Bank</option>
-                      </SelectGroupTwo>
+                      <label className="text-md  block font-medium capitalize text-black dark:text-white">
+                        Question Type
+                      </label>
+                      <Select
+                        defaultValue="lucy"
+                        className="w-full"
+                        options={[
+                          { value: "jack", label: "Jack" },
+                          { value: "lucy", label: "Lucy" },
+                          { value: "Yiminghe", label: "yiminghe" },
+                        ]}
+                        onChange={(value) => setQuestionType(value)}
+                      />
                     </div>
                   </div>
                 </div>
