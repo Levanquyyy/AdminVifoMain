@@ -15,10 +15,9 @@ import { useRouter } from "next/navigation";
 
 interface DataType {
   key: string;
-  Name: string;
   ProductFamily: string;
-  RankCode: string;
-  Status: string;
+  Provider: string;
+  TotalDocuments: string;
 }
 
 type DataIndex = keyof DataType;
@@ -26,38 +25,33 @@ type DataIndex = keyof DataType;
 const data: DataType[] = [
   {
     key: "1",
-    Name: "Product A",
     ProductFamily: "Family 1",
-    RankCode: "R1",
-    Status: "COMPLETED",
+    Provider: "Provider A",
+    TotalDocuments: "10",
   },
   {
     key: "2",
-    Name: "Product B",
     ProductFamily: "Family 2",
-    RankCode: "R2",
-    Status: "PENDING",
+    Provider: "Provider B",
+    TotalDocuments: "20",
   },
   {
     key: "3",
-    Name: "Product C",
     ProductFamily: "Family 3",
-    RankCode: "R3",
-    Status: "COMPLETED",
+    Provider: "Provider C",
+    TotalDocuments: "30",
   },
   {
     key: "4",
-    Name: "Product D",
     ProductFamily: "Family 4",
-    RankCode: "R4",
-    Status: "PENDING",
+    Provider: "Provider D",
+    TotalDocuments: "40",
   },
   {
     key: "5",
-    Name: "A D",
-    ProductFamily: "Family 4",
-    RankCode: "R4",
-    Status: "PENDING",
+    ProductFamily: "Family 5",
+    Provider: "Provider E",
+    TotalDocuments: "50",
   },
 ];
 
@@ -71,7 +65,7 @@ const TableThree = () => {
       label: "Edit",
       key: "0",
       onClick: () => {
-        router.push("/forms/management/edit");
+        router.push("/forms/claimrequirements/edit");
       },
     },
     {
@@ -198,45 +192,29 @@ const TableThree = () => {
       title: "ID",
       dataIndex: "key",
       key: "key",
-      width: "20%",
+      width: "30%",
       ...getColumnSearchProps("key"),
-    },
-    {
-      title: "Name",
-      dataIndex: "Name",
-      key: "Name",
-      ...getColumnSearchProps("Name"),
-      sorter: (a, b) => a.Name.length - b.Name.length,
-      sortDirections: ["descend", "ascend"],
     },
     {
       title: "Product Family",
       dataIndex: "ProductFamily",
       key: "ProductFamily",
-      width: "20%",
+      width: "30%",
       ...getColumnSearchProps("ProductFamily"),
     },
     {
-      title: "Rank Code",
-      dataIndex: "RankCode",
-      key: "RankCode",
-      width: "20%",
-      ...getColumnSearchProps("RankCode"),
+      title: "Provider",
+      dataIndex: "Provider",
+      key: "Provider",
+      width: "30%",
+      ...getColumnSearchProps("Provider"),
     },
     {
-      title: "Status",
-      dataIndex: "Status",
-      key: "Status",
-      width: "20%",
-      ...getColumnSearchProps("Status"),
-      render: (status: string) => {
-        let color = status === "COMPLETED" ? "green" : "volcano";
-        return (
-          <Tag color={color} key={status}>
-            {status.toUpperCase()}
-          </Tag>
-        );
-      },
+      title: "Total Documents",
+      dataIndex: "TotalDocuments",
+      key: "TotalDocuments",
+      width: "30%",
+      ...getColumnSearchProps("TotalDocuments"),
     },
     {
       title: "Action",
@@ -286,7 +264,7 @@ const TableThree = () => {
         <Button
           type="primary"
           className="bg-primary"
-          onClick={() => router.push("/forms/management/add")}
+          onClick={() => router.push("/forms/claimrequirements/add")}
         >
           Thêm Sản Phẩm
           <svg
